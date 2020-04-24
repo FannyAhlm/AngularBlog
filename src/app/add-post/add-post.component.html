@@ -1,0 +1,33 @@
+<form #addPostForm="ngForm" *ngIf="loggedIn; else loginplease">
+        <div class="inputs">
+            <label for="title">Title:</label>
+            <input [class.error]="title.invalid && title.touched" name="title" required minlength="10" ngModel type="text" id="title" #title="ngModel">
+            <span class="error" *ngIf="title.invalid && title.touched">Title requires at least 10 characters!</span>
+        </div>
+        <div class="inputs">
+            <label for="content">Content:</label>
+            <textarea [class.error]="content.invalid && content.touched" name="content" required minlength="20" ngModel id="content" cols="30" #content="ngModel" rows="10"></textarea>
+            <span class="error" *ngIf="content.invalid && content.touched">At least 20 characters makes a blogpost.</span>
+        </div>
+
+    <div class="bottom">
+        <div class="inputs">
+            <label for="author">Author: <span>(optional)</span></label>
+            <input name="author" ngModel type="text" id="author">
+            
+        </div>
+        <div class="inputs estTime">
+            <label for="minutes">Time to read: <span>(minutes)</span></label>
+            <input [class.error]="!time.value && time.touched" name="time" required ngModel type="number" min="0" id="minutes" #time="ngModel">
+            <span class="error" *ngIf="!time.value && time.touched">Minimum read time is 1 minute.</span>
+        </div>
+        <span *ngIf="success" class="success">Successfully sent your new post!</span>
+        <button [disabled]="addPostForm.form.invalid || !time.value" (click)="sendPost(addPostForm.value)">Submit</button>
+    </div>
+</form>
+<ng-template #loginplease>
+    <div class="form">
+        <p>Error: You must be logged in to use this page!</p>
+    </div>
+ 
+</ng-template>

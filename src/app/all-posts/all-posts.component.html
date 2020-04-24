@@ -1,0 +1,6 @@
+<div class="titleDiv">
+    <div *ngFor="let post of allPosts">
+        <p>{{post.title}}</p> <button (click)="deleteItem(post.title)" *ngIf="loggedIn">Delete Post</button>
+    </div>
+    
+</div>

@@ -1,0 +1,17 @@
+h2{
+    text-align: center;
+    margin-top: 1rem;
+}
+div.body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 20rem;
+    margin: 0 1rem;
+}
+div.item{
+    margin-bottom: 1rem;
+}
+div.item:nth-child(odd){
+    background-color: rgb(216, 216, 216);
+}

@@ -1,0 +1,33 @@
+.titleDiv{
+    height: calc(100vh - 17em);
+    padding-top: 1rem;
+}
+.titleDiv > div{
+    display: flex;
+    padding: .3rem 5rem;
+}
+.titleDiv > div:hover{
+    opacity: 0.9;
+}
+.titleDiv button{
+    background-color: transparent;
+    border: none;
+    font-weight: 900;
+    cursor: pointer;
+    position: absolute;
+    left: 30em;
+}
+.titleDiv > div:nth-child(odd){
+    background-color: grey;
+}
+@media(max-width: 430px){
+    .titleDiv > div{
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    .titleDiv button{
+        position: relative;
+        left: 0;
+    }
+}

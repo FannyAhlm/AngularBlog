@@ -1,0 +1,106 @@
+form div.inputs{
+    display: flex;
+    flex-direction: column;
+}
+form{
+    display: flex;
+    flex-direction: column;
+    min-height: calc(100vh - 21em);
+    width: 40rem;
+    justify-content: space-evenly;
+    align-items: flex-start;
+    background-color: rgb(222, 228, 227);
+    padding-left: 3rem;
+    margin: 2rem auto;
+    border-radius: 10px;
+    box-shadow: 3px 3px 4px -4px black;
+}
+
+div.bottom{
+    display: flex;
+    width: 35rem;
+    position: relative;
+    align-items: flex-end;
+}
+div.bottom .estTime input{
+    margin-right: .2rem;
+}
+input{
+    margin-right: 3rem;
+    padding: .2rem;
+    margin-bottom: .2rem;
+}
+input#title{
+    width: 30vw;
+    min-width: 15em;
+}
+input.error,
+textarea.error{
+    border: 1px solid red;
+}
+span{
+    font-size: .6rem;
+}
+span.error{
+    font-size: .8rem;
+    color: red;
+}
+span.success{
+    font-size: 1rem;
+    color: green;
+}
+input,
+textarea{
+    margin-bottom: .3rem;
+}
+textarea{
+    width: 30rem;
+    resize: none;
+    padding: .2rem;
+}
+button{
+    font-size: 1.3rem;
+    height: 2em;
+    width: 7rem;
+    padding: .2em;
+    border-radius: 5px;
+    background-color: teal;
+    color: white;
+    cursor: pointer;
+    align-self: flex-end;
+    margin-left: auto;
+}
+button:disabled{
+    background-color: rgb(0, 71, 71);
+}
+button:hover{
+    background-color: rgba(0, 128, 128, 0.849);
+}
+button:disabled:hover{
+    background-color: rgb(0, 71, 71);
+    cursor: not-allowed;
+}
+@media(max-width: 666px){
+
+    form{
+        width: 90vw;
+    }
+
+    div.bottom{
+        flex-direction: column;
+        align-items: flex-start;
+        width: 80vw;
+    }
+
+    textarea{
+        width: calc(90vw - 6rem);
+    }
+    input{
+        width: calc(90vw - 14rem);
+        min-width: 10rem;
+    }
+    button{
+        margin-right: 1rem;
+    }
+
+}

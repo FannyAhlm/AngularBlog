@@ -1,0 +1,7 @@
+<div>
+    <h2 *ngIf="!loggedIn; else logOut">Are you the blogger?</h2>
+    <ng-template #logOut>
+        <h2>Do you want to sign out?</h2>
+    </ng-template>
+    <button (click)="loginUser()">{{!loggedIn ? "Yes, log in!" : "Sign Out"}}</button>
+</div>

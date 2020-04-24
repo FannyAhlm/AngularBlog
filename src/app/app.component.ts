@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { BlogInfoService } from './blog-info.service';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,14 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'AngularBlog';
+  blogService: BlogInfoService;
+  loggedIn: boolean;
+
+  constructor(blogService: BlogInfoService){
+    this.blogService = blogService;
+  }
+  ngOnInit(){
+    this.blogService.loggedIn.subscribe(data => this.loggedIn = data);
+  }
+
 }

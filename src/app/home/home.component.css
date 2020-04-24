@@ -1,0 +1,9 @@
+div.homeContainer{
+    height: 30em;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 3rem;
+}
